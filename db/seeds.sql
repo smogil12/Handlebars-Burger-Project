@@ -1,4 +1,4 @@
-insert into burgers (burger_name, devoured) values
+insert into burgers (burger_name) values
 ("Big Mac"),
 ("Double Baconator"),
 ("Impossible Burger");
