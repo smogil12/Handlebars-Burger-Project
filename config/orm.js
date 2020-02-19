@@ -15,37 +15,24 @@ var orm = {
     connection.query(
       queryString,
       [tableInput, columnName, burgerName],
-      function(err, res) {
+      function(err) {
         if (err) {
           throw err;
         }
-        cb(res);
+        cb();
       }
     );
   },
-  updateOne: function(
-    tableInput,
-    updateColumnName,
-    updateRowVal,
-    searchColumnName,
-    searchRowVal,
-    cb
-  ) {
-    var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
+  updateOne: function(tableInput, data, searchColumnName, searchRowVal, cb) {
+    var queryString = "UPDATE ?? SET ? WHERE ?? = ?";
     connection.query(
       queryString,
-      [
-        tableInput,
-        updateColumnName,
-        updateRowVal,
-        searchColumnName,
-        searchRowVal
-      ],
-      function(err, res) {
+      [tableInput, data, searchColumnName, searchRowVal],
+      function(err) {
         if (err) {
           throw err;
         }
-        cb(res);
+        cb();
       }
     );
   }

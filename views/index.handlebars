@@ -4,7 +4,7 @@
 
 <div class="wrapper">
     <div id="create-burger">
-        <form action="/" method="POST">
+        <form action="/api/burgers" method="POST">
             <input id="burger-name" type="text" name="burger_name" placeholder="Create a burger">
             <button id="submit-btn" type="submit">Manifest</button>
         </form>
@@ -16,9 +16,7 @@
             {{#each burgers}}
             {{#unless this.devoured}}
             <div class="burger">
-                <form class="devour-burger-form" action="/{{id}}?_method=PUT" method="POST">
-                    <button class="eat-btn">EAT</button>
-                </form>
+                <button class="eat-btn" type="submit" data-burgerId="{{id}}">EAT</button>
                 {{burger_name}} <span>#{{id}}</span>
             </div>
             {{/unless}}
